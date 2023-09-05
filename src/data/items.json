@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Krzesło",
+        "price": 100,
+        "imageUrl": "https://selsey.pl/public/upload/sellasist_cache/original_6cea90d62594a2ebe4a2857033fdc746.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Krzesło",
+        "price": 100,
+        "imageUrl": "https://selsey.pl/public/upload/sellasist_cache/original_6cea90d62594a2ebe4a2857033fdc746.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Krzesło",
+        "price": 100,
+        "imageUrl": "https://selsey.pl/public/upload/sellasist_cache/original_6cea90d62594a2ebe4a2857033fdc746.jpg"
+    }
+]
