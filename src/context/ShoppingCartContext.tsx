@@ -11,7 +11,11 @@ type ShoppingCartContext = {
     removeFromCart: (id: number) => void;
     cartQuantity: number;
     cartItems: CartItem[];
+    currentCategory: Categories;
+    changeCategory: (category: Categories) => void;
 };
+
+export type Categories = "all" | "chair" | "table" | "bed" | "wardrobe";
 
 type CartItem = {
     id: number;
@@ -31,11 +35,14 @@ type ShoppingCartProviderProps = {
 export function ShoppingCartProvider({children}: ShoppingCartProviderProps) {
     const [cartItems, setCartItems] = useLocalStorage<CartItem[]>("shopping-cart", []);
     const [isOpen, setIsOpen] = useState(false);
+    const [currentCategory, setCurrentCategory] = useState<Categories>("all");
 
     const cartQuantity = cartItems.reduce((quantity, item) => item.quantity + quantity, 0);
 
     const openCart = () => setIsOpen(true);
     const closeCart = () => setIsOpen(false);
+
+    const changeCategory = (category: Categories) => setCurrentCategory(category);
 
     function getItemQuantity(id: number) {
         return cartItems.find(item => item.id === id)?.quantity || 0;
@@ -90,6 +97,8 @@ export function ShoppingCartProvider({children}: ShoppingCartProviderProps) {
                 cartQuantity,
                 openCart,
                 closeCart,
+                currentCategory,
+                changeCategory,
             }}
         >
             {children}
