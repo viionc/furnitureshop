@@ -11,9 +11,9 @@ function App() {
             <Navbar />
 
             <Routes>
-                <Route path="" element={<Home />} />
-                <Route path="/store" element={<Store />} />
-                <Route path="/about" element={<About />} />
+                <Route path="/furnitureshop" element={<Home />} />
+                <Route path="/furnitureshop/store" element={<Store />} />
+                <Route path="/furnitureshop/about" element={<About />} />
             </Routes>
             <footer
                 id="sticky-footer"
