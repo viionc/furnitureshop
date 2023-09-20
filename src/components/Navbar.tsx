@@ -12,10 +12,10 @@ export function Navbar() {
                         Home
                     </Nav.Link>
                     <Nav.Link to="/store" as={NavLink} className="text-white fs-5">
-                        Sklep
+                        Store
                     </Nav.Link>
                     <Nav.Link to="/about" as={NavLink} className="text-white fs-5">
-                        O nas
+                        About
                     </Nav.Link>
                 </Nav>
                 <Button
