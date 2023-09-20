@@ -13,6 +13,8 @@ type ShoppingCartContext = {
     cartItems: CartItem[];
     currentCategory: Categories;
     changeCategory: (category: Categories) => void;
+    changePriceRange: (prices: number[]) => void;
+    priceRange: number[];
 };
 
 export type Categories = "all" | "chair" | "table" | "bed" | "wardrobe";
@@ -36,6 +38,7 @@ export function ShoppingCartProvider({children}: ShoppingCartProviderProps) {
     const [cartItems, setCartItems] = useLocalStorage<CartItem[]>("shopping-cart", []);
     const [isOpen, setIsOpen] = useState(false);
     const [currentCategory, setCurrentCategory] = useState<Categories>("all");
+    const [priceRange, setPriceRange] = useState([0, 10000000]);
 
     const cartQuantity = cartItems.reduce((quantity, item) => item.quantity + quantity, 0);
 
@@ -85,6 +88,9 @@ export function ShoppingCartProvider({children}: ShoppingCartProviderProps) {
             return currItems.filter(item => item.id !== id);
         });
     }
+    function changePriceRange(prices: number[]) {
+        setPriceRange(prices);
+    }
 
     return (
         <ShoppingCartContext.Provider
@@ -99,6 +105,8 @@ export function ShoppingCartProvider({children}: ShoppingCartProviderProps) {
                 closeCart,
                 currentCategory,
                 changeCategory,
+                priceRange,
+                changePriceRange,
             }}
         >
             {children}

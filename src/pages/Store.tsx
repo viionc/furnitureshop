@@ -1,47 +1,38 @@
-import {Row, Col, Button} from "react-bootstrap";
 import storeItems from "../data/items.json";
 import {StoreItem, StoreItemProps} from "../components/StoreItem";
-import {Categories, useShoppingCart} from "../context/ShoppingCartContext";
-
-export const categories = [
-    {id: "all", label: "wszystko"},
-    {id: "chair", label: "krzesła"},
-    {id: "table", label: "stoły"},
-    {id: "bed", label: "łóżka"},
-    {id: "wardrobe", label: "szafy"},
-];
+import {useShoppingCart} from "../context/ShoppingCartContext";
+import ShopFilter from "../components/ShopFilter";
 
 export function Store() {
-    const {changeCategory, currentCategory} = useShoppingCart();
+    const {currentCategory, priceRange} = useShoppingCart();
     return (
         <>
-            <Row className="justify-content-center pb-3">
-                {categories.map(category => {
-                    return (
-                        <Col
-                            key={category.id}
-                            style={{flex: "0 0 0%"}}
-                            onClick={() => changeCategory(category.id as Categories)}
-                        >
-                            <Button>{category.label.toUpperCase()}</Button>
-                        </Col>
-                    );
-                })}
-            </Row>
-            <Row md={2} xs={1} lg="3" className="g-3">
-                {storeItems.map(item => {
-                    const fixItem = item as StoreItemProps;
-                    return (
-                        <>
-                            {(currentCategory == "all" || currentCategory == item.category) && (
-                                <Col key={item.id}>
-                                    <StoreItem {...fixItem}></StoreItem>
-                                </Col>
-                            )}
-                        </>
-                    );
-                })}
-            </Row>
+            <div className="d-flex w-100 p-5">
+                <ShopFilter></ShopFilter>
+                <div className="d-flex flex-wrap align-content-center gap-3 w-100">
+                    {storeItems
+                        .filter(item => {
+                            if (
+                                (currentCategory === "all" || currentCategory === item.category) &&
+                                item.price < priceRange[1] &&
+                                item.price > priceRange[0]
+                            ) {
+                                return item;
+                            }
+                        })
+                        .map(item => {
+                            const fixItem = item as StoreItemProps;
+                            return (
+                                <>
+                                    {(currentCategory == "all" ||
+                                        currentCategory == item.category) && (
+                                        <StoreItem key={item.id} {...fixItem}></StoreItem>
+                                    )}
+                                </>
+                            );
+                        })}
+                </div>
+            </div>
         </>
     );
 }

@@ -20,11 +20,12 @@ export function ShoppingCart({isOpen}: ShoppingCartProps) {
                         return <CartItem key={item.id} {...item}></CartItem>;
                     })}
                     <div className="ms-auto fw-bold fs-5">
-                        Suma{" "}
+                        Total:{" "}
                         {formatCurrency(
                             cartItems.reduce((total, cartItem) => {
                                 const item = storeItems.find(i => i.id === cartItem.id);
-                                return total + (item?.price || 0) * cartItem.quantity;
+                                const price = item?.promoPrice ? item?.promoPrice : item?.price;
+                                return total + (price || 0) * cartItem.quantity;
                             }, 0)
                         )}
                     </div>

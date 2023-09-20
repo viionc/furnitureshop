@@ -8,15 +8,24 @@ export type StoreItemProps = {
     price: number;
     imageUrl: string;
     category: Categories;
+    promoPrice?: number;
 };
 
-export function StoreItem({id, name, price, imageUrl}: StoreItemProps) {
+export function StoreItem({id, name, price, imageUrl, promoPrice}: StoreItemProps) {
     const {getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart} =
         useShoppingCart();
 
     const quantity = getItemQuantity(id);
     return (
-        <Card className="h-100 text-white" style={{backgroundColor: "#242323"}}>
+        <Card
+            className="text-white align-content-center"
+            style={{
+                backgroundColor: "#242323",
+                flex: "1, 1, 0px",
+                minWidth: "300px",
+                maxWidth: "300px",
+            }}
+        >
             <Card.Img
                 variant="top"
                 src={imageUrl}
@@ -25,13 +34,22 @@ export function StoreItem({id, name, price, imageUrl}: StoreItemProps) {
             ></Card.Img>
             <Card.Body className="d-flex flex-column">
                 <Card.Title className="d-flex justify-content-between align-items-baseline mb-4">
-                    <span className="fs-2">{name}</span>
-                    <span className="ms-2 text-muted">{formatCurrency(price)}</span>
+                    <span className="fs-4">{name}</span>
+                    {!promoPrice ? (
+                        <span className="text-white">{formatCurrency(price)}</span>
+                    ) : (
+                        <div className="d-flex flex-column">
+                            <span className="text-white text-decoration-line-through">
+                                {formatCurrency(price)}
+                            </span>
+                            <span className="text-success">{formatCurrency(promoPrice)}</span>
+                        </div>
+                    )}
                 </Card.Title>
                 <div className="mt-auto">
                     {quantity === 0 ? (
                         <Button className="w-100" onClick={() => increaseCartQuantity(id)}>
-                            Dodaj to koszyka
+                            Add to Cart
                         </Button>
                     ) : (
                         <div
