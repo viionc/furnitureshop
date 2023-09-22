@@ -3,6 +3,7 @@ import {Categories, useShoppingCart} from "../context/ShoppingCartContext";
 import storeIems from "../data/items.json";
 import {Link, useNavigate} from "react-router-dom";
 import {FormEvent} from "react";
+import logo from "../assets/logo.png";
 
 function Heading() {
     const {nameFilter, changeNameFilter, changeCategory, currentCategory} = useShoppingCart();
@@ -20,7 +21,7 @@ function Heading() {
     return (
         <>
             <Container className="d-flex align-items-center justify-content-center">
-                <img src="/src/assets/logo.png"></img>
+                <img src={logo}></img>
                 <Form onSubmit={e => handleSubmit(e)} style={{minWidth: 400}}>
                     <InputGroup>
                         <Form.Control
