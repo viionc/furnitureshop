@@ -14,7 +14,7 @@ function App() {
             <Navbar />
             <Heading></Heading>
             <Routes>
-                <Route index element={<Navigate to="/furnitureshop" replace />} />
+                <Route index element={<Navigate to="/furnitureshop/" replace />} />
                 <Route path="/furnitureshop/" element={<Home />} />
                 <Route path="/furnitureshop/store" element={<Store />} />
                 <Route path="/furnitureshop/about" element={<About />} />
