@@ -5,7 +5,7 @@ import {Link, useNavigate} from "react-router-dom";
 import {FormEvent} from "react";
 
 function Heading() {
-    const {nameFilter, changeNameFilter, changeCategory} = useShoppingCart();
+    const {nameFilter, changeNameFilter, changeCategory, currentCategory} = useShoppingCart();
     const categories = ["all", ...new Set(storeIems.map(item => item.category))];
     const navigate = useNavigate();
 
@@ -38,7 +38,9 @@ function Heading() {
                         <Link
                             key={category}
                             to="/furnitureshop/store"
-                            className="top-categories text-black text-decoration-none"
+                            className={`top-categories text-black text-decoration-none ${
+                                currentCategory === category ? "active" : ""
+                            }`}
                             onClick={() => handleLink(category as Categories)}
                         >
                             <span className=" text-capitalize fs-4 px-5">{category}</span>

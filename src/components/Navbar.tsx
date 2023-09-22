@@ -8,13 +8,13 @@ export function Navbar() {
         <NavbarBs sticky="top" className="shadow-lg mb-3 text-black fs-5">
             <Container>
                 <Nav className="me-auto ">
-                    <Nav.Link to="/furnitureshop" as={NavLink}>
+                    <Nav.Link to="/furnitureshop" as={NavLink} className="px-5">
                         Home
                     </Nav.Link>
-                    <Nav.Link to="/furnitureshop/store" as={NavLink}>
+                    <Nav.Link to="/furnitureshop/store" as={NavLink} className="px-5">
                         Store
                     </Nav.Link>
-                    <Nav.Link to="/furnitureshop/about" as={NavLink}>
+                    <Nav.Link to="/furnitureshop/about" as={NavLink} className="px-5">
                         About
                     </Nav.Link>
                 </Nav>

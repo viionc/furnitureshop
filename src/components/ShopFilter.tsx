@@ -11,6 +11,7 @@ export default function ShopFilter() {
         changeHasPromoActive,
         nameFilter,
         changeNameFilter,
+        currentCategory,
     } = useShoppingCart();
     const categories = ["all", ...new Set(storeIems.map(item => item.category))];
 
@@ -39,7 +40,14 @@ export default function ShopFilter() {
             <div className="d-flex flex-column justify-content-center gap-3 border-bottom pb-3">
                 {categories.map(category => {
                     return (
-                        <div key={category} onClick={() => changeCategory(category as Categories)}>
+                        <div
+                            className={`filter-category ${
+                                currentCategory === category ? "active" : ""
+                            }`}
+                            key={category}
+                            onClick={() => changeCategory(category as Categories)}
+                            style={{cursor: "pointer"}}
+                        >
                             {category.toUpperCase()}
                         </div>
                     );

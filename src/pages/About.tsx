@@ -1,5 +1,7 @@
 import {Container} from "react-bootstrap";
 
+import insideshop from "../assets/insideshop.jpg";
+
 export function About() {
     return (
         <>
@@ -27,7 +29,7 @@ export function About() {
 
                     <p>Lorem, ipsum dolor.</p>
                 </div>
-                <img src="/src/assets/insideshop.jpg" alt="inside-shop" className="pt-5"></img>
+                <img src={insideshop} alt="inside-shop" className="pt-5"></img>
             </Container>
         </>
     );

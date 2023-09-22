@@ -6,6 +6,10 @@ nav {
     background-color: var(--maincolor);
 }
 
+nav a:hover {
+    opacity: 0.7;
+    background: rgb(245, 213, 201);
+}
 .top-categories:hover {
     background-color: antiquewhite;
     opacity: 0.6;
@@ -17,4 +21,10 @@ nav {
 }
 .card-img:hover {
     transform: scale(1.5);
+}
+.filter-category:hover {
+    background: white;
+}
+.active {
+    background-color: var(--maincolor);
 }
