@@ -5,28 +5,56 @@
         "price": 30,
         "promoPrice": 20,
         "imageUrl": "https://selsey.pl/public/upload/sellasist_cache/original_6cea90d62594a2ebe4a2857033fdc746.jpg",
-        "category": "chairs"
+        "category": "chairs",
+        "details": {
+            "height": "50",
+            "width": "30",
+            "depth": "30",
+            "color": "brown",
+            "weight": "2"
+        }
     },
     {
         "id": 2,
         "name": "Spinning Chair",
         "price": 45,
         "imageUrl": "https://ergomeble.pl/img/products/23/29/9/7_max.jpg",
-        "category": "chairs"
+        "category": "chairs",
+        "details": {
+            "height": "60",
+            "width": "30",
+            "depth": "30",
+            "color": "gray",
+            "weight": "5"
+        }
     },
     {
         "id": 3,
         "name": "Office Chair",
         "price": 150,
         "imageUrl": "https://komfort-biuro.pl/environment/cache/images/500_500_productGfx_1586/Fotel-obrotowy-biurowy-GN-301SZARY-z-wysuwem-siedziska-krzeslo-biurowe-obrotowe.webp",
-        "category": "chairs"
+        "category": "chairs",
+        "details": {
+            "height": "80",
+            "width": "60",
+            "depth": "50",
+            "color": "black",
+            "weight": "10"
+        }
     },
     {
         "id": 4,
         "name": "Kitchen Chair",
         "price": 50,
         "imageUrl": "https://www.meblelargo.pl/img/products/12/52/1/1_max.jpg",
-        "category": "chairs"
+        "category": "chairs",
+        "details": {
+            "height": "40",
+            "width": "25",
+            "depth": "20",
+            "color": "white",
+            "weight": "2"
+        }
     },
     {
         "id": 5,
@@ -34,14 +62,28 @@
         "price": 600,
         "promoPrice": 400,
         "imageUrl": "https://fabrykadesign.pl/wp-content/uploads/2020/12/40121-1.jpg",
-        "category": "tables"
+        "category": "tables",
+        "details": {
+            "height": "50",
+            "width": "120",
+            "depth": "50",
+            "color": "black",
+            "weight": "25"
+        }
     },
     {
         "id": 6,
         "name": "Office Desk",
         "price": 150,
         "imageUrl": "https://yrke.pl/userdata/public/gfx/79689/Biurko-z-metalowymi-nogami---Dab-zloty-1.jpg",
-        "category": "tables"
+        "category": "tables",
+        "details": {
+            "height": "70",
+            "width": "100",
+            "depth": "30",
+            "color": "brown",
+            "weight": "10"
+        }
     },
     {
         "id": 7,
@@ -49,21 +91,42 @@
         "price": 400,
         "promoPrice": 300,
         "imageUrl": "https://a.allegroimg.com/s512/117faf/a922c005418dbcad9fb14ca60ae7/Stol-Stolik-kuchenny-salonowy-Lawa-otwierana-NIC",
-        "category": "tables"
+        "category": "tables",
+        "details": {
+            "height": "30",
+            "width": "70",
+            "depth": "25",
+            "color": "brown",
+            "weight": "8"
+        }
     },
     {
         "id": 8,
         "name": "Bed",
         "price": 1200,
         "imageUrl": "https://e1.meble.pl/gfx/_zdjecia_e1/sklep_oferta/4/200/4200634/klozko_rainbow_tecza_legs_basic___index_42634_2787733938.jpg",
-        "category": "beds"
+        "category": "beds",
+        "details": {
+            "height": "25",
+            "width": "90",
+            "depth": "210",
+            "color": "white",
+            "weight": "35"
+        }
     },
     {
         "id": 9,
         "name": "Queen Sized Bed",
         "price": 2400,
         "imageUrl": "https://s1.meble.pl/gfx/_zdjecia_wspolne/sklep_oferta/2/729/2729461/kloze_z_wezglowiem_tapicerowanym__velvet_74___pres_6718154267.jpg",
-        "category": "beds"
+        "category": "beds",
+        "details": {
+            "height": "33",
+            "width": "180",
+            "depth": "230",
+            "color": "brown",
+            "weight": "58"
+        }
     },
     {
         "id": 10,
@@ -71,21 +134,42 @@
         "price": 1753,
         "promoPrice": 1550,
         "imageUrl": "https://s1.meble.pl/gfx/_zdjecia_wspolne/sklep_oferta/4/848/4848752/klozko_debowe_tipi___bialy___index_4848752_7015091539.jpg",
-        "category": "beds"
+        "category": "beds",
+        "details": {
+            "height": "200",
+            "width": "180",
+            "depth": "30",
+            "color": "white",
+            "weight": "32"
+        }
     },
     {
-        "id": 10,
+        "id": 11,
         "name": "2-doored Wardrobe",
         "price": 2000,
         "imageUrl": "https://s1.meble.pl/gfx/_zdjecia_wspolne/sklep_oferta/5/224/5224364/kszafa_2_drzwiowa_arco_a___bialy_polyskdab_grandso_1996852729.jpg",
-        "category": "wardrobes"
+        "category": "wardrobes",
+        "details": {
+            "height": "210",
+            "width": "100",
+            "depth": "30",
+            "color": "white",
+            "weight": "78"
+        }
     },
     {
-        "id": 10,
+        "id": 12,
         "name": "3-doored Wardrobe",
         "price": 2800,
         "promoPrice": 2137,
         "imageUrl": "https://s1.meble.pl/gfx/_zdjecia_wspolne/sklep_oferta/4/582/4582170/kszafa_z_lustrem_3_drzwiowa_kora_ks2_2_szuflady____3902686520.jpg",
-        "category": "wardrobes"
+        "category": "wardrobes",
+        "details": {
+            "height": "210",
+            "width": "140",
+            "depth": "40",
+            "color": "brown",
+            "weight": "108"
+        }
     }
 ]

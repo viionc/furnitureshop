@@ -1,0 +1,20 @@
+:root {
+    --maincolor: rgb(255, 204, 183);
+}
+
+nav {
+    background-color: var(--maincolor);
+}
+
+.top-categories:hover {
+    background-color: antiquewhite;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.card-img {
+    transition: 0.5s all ease-in-out;
+}
+.card-img:hover {
+    transform: scale(1.5);
+}

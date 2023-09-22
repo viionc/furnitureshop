@@ -3,18 +3,22 @@ import {ShoppingCart} from "../components/ShoppingCart";
 import {useLocalStorage} from "../hooks/useLocalStorage";
 
 type ShoppingCartContext = {
+    cartQuantity: number;
+    cartItems: CartItem[];
+    currentCategory: Categories;
+    priceRange: number[];
+    hasPromoActive: boolean;
+    nameFilter: string;
     openCart: () => void;
     closeCart: () => void;
     getItemQuantity: (id: number) => number;
     increaseCartQuantity: (id: number) => void;
     decreaseCartQuantity: (id: number) => void;
     removeFromCart: (id: number) => void;
-    cartQuantity: number;
-    cartItems: CartItem[];
-    currentCategory: Categories;
     changeCategory: (category: Categories) => void;
     changePriceRange: (prices: number[]) => void;
-    priceRange: number[];
+    changeHasPromoActive: () => void;
+    changeNameFilter: (name: string) => void;
 };
 
 export type Categories = "all" | "chair" | "table" | "bed" | "wardrobe";
@@ -39,6 +43,8 @@ export function ShoppingCartProvider({children}: ShoppingCartProviderProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [currentCategory, setCurrentCategory] = useState<Categories>("all");
     const [priceRange, setPriceRange] = useState([0, 10000000]);
+    const [hasPromoActive, setHasPromoActive] = useState(false);
+    const [nameFilter, setNameFilter] = useState("");
 
     const cartQuantity = cartItems.reduce((quantity, item) => item.quantity + quantity, 0);
 
@@ -91,22 +97,32 @@ export function ShoppingCartProvider({children}: ShoppingCartProviderProps) {
     function changePriceRange(prices: number[]) {
         setPriceRange(prices);
     }
+    function changeHasPromoActive() {
+        setHasPromoActive(!hasPromoActive);
+    }
+    function changeNameFilter(name: string) {
+        setNameFilter(name);
+    }
 
     return (
         <ShoppingCartContext.Provider
             value={{
+                cartItems,
+                cartQuantity,
+                currentCategory,
+                priceRange,
+                hasPromoActive,
+                nameFilter,
                 getItemQuantity,
                 increaseCartQuantity,
                 decreaseCartQuantity,
                 removeFromCart,
-                cartItems,
-                cartQuantity,
                 openCart,
                 closeCart,
-                currentCategory,
                 changeCategory,
-                priceRange,
                 changePriceRange,
+                changeHasPromoActive,
+                changeNameFilter,
             }}
         >
             {children}
