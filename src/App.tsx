@@ -15,7 +15,7 @@ function App() {
             <Heading></Heading>
             <Routes>
                 <Route index element={<Navigate to="/furnitureshop" replace />} />
-                <Route path="/furnitureshop" element={<Home />} />
+                <Route path="/furnitureshop/" element={<Home />} />
                 <Route path="/furnitureshop/store" element={<Store />} />
                 <Route path="/furnitureshop/about" element={<About />} />
                 <Route path="/furnitureshop/store/:id" element={<Product />} />
