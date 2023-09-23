@@ -25,7 +25,7 @@ export function Store() {
     return (
         <>
             <Container id="store" className="d-flex w-100 p-5">
-                <Row>
+                <Row className="w-100">
                     <ShopFilter></ShopFilter>
                     <Col className="d-flex flex-wrap align-content-center gap-3 w-100 pb-5">
                         {storeItems

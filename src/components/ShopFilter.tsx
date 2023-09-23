@@ -26,7 +26,7 @@ export default function ShopFilter() {
     };
 
     return (
-        <Col lg={2}>
+        <Col md={2}>
             <p className="text-black fs-5 p-0 m-0 py-2">Name:</p>
             <InputGroup className="border-bottom pb-3">
                 <Form.Control
