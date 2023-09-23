@@ -5,19 +5,27 @@ import {useShoppingCart} from "../context/ShoppingCartContext";
 export function Navbar() {
     const {openCart, cartQuantity} = useShoppingCart();
     return (
-        <NavbarBs sticky="top" className="shadow-lg mb-3 text-black fs-5">
+        <NavbarBs
+            collapseOnSelect
+            expand="lg"
+            sticky="top"
+            className="shadow-lg mb-3 text-black fs-5"
+        >
             <Container>
-                <Nav className="me-auto ">
-                    <Nav.Link to="/furnitureshop" as={NavLink} className="px-5">
-                        Home
-                    </Nav.Link>
-                    <Nav.Link to="/furnitureshop/store" as={NavLink} className="px-5">
-                        Store
-                    </Nav.Link>
-                    <Nav.Link to="/furnitureshop/about" as={NavLink} className="px-5">
-                        About
-                    </Nav.Link>
-                </Nav>
+                <NavbarBs.Toggle aria-controls="responsive-navbar-nav" />
+                <NavbarBs.Collapse id="responsive-navbar-nav">
+                    <Nav className="me-auto ">
+                        <Nav.Link to="/furnitureshop" as={NavLink} className="px-5">
+                            Home
+                        </Nav.Link>
+                        <Nav.Link to="/furnitureshop/store" as={NavLink} className="px-5">
+                            Store
+                        </Nav.Link>
+                        <Nav.Link to="/furnitureshop/about" as={NavLink} className="px-5">
+                            About
+                        </Nav.Link>
+                    </Nav>
+                </NavbarBs.Collapse>
                 <Button
                     onClick={openCart}
                     style={{width: "3rem", height: "3rem", position: "relative"}}

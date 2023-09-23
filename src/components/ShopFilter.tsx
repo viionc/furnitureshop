@@ -1,4 +1,4 @@
-import {Container, InputGroup} from "react-bootstrap";
+import {Col, InputGroup} from "react-bootstrap";
 import {Categories, useShoppingCart} from "../context/ShoppingCartContext";
 import storeIems from "../data/items.json";
 import Form from "react-bootstrap/form";
@@ -26,7 +26,7 @@ export default function ShopFilter() {
     };
 
     return (
-        <Container style={{maxWidth: 300}}>
+        <Col lg={2}>
             <p className="text-black fs-5 p-0 m-0 py-2">Name:</p>
             <InputGroup className="border-bottom pb-3">
                 <Form.Control
@@ -69,15 +69,15 @@ export default function ShopFilter() {
                 />
             </InputGroup>
 
-            <InputGroup className="d-flex align-items-center gap-5">
+            <InputGroup className="d-flex align-items-center gap-2">
                 <p className="text-black fs-5 p-0 m-0 py-2">Discounted?:</p>
                 <Form.Check
                     type="switch"
                     id="custom-switch"
-                    style={{transform: "scale(1.8)"}}
+                    style={{transform: "scale(1)"}}
                     onChange={changeHasPromoActive}
                 />
             </InputGroup>
-        </Container>
+        </Col>
     );
 }

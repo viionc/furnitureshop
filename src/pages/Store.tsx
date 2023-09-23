@@ -2,6 +2,7 @@ import storeItems from "../data/items.json";
 import {StoreItem, StoreItemProps} from "../components/StoreItem";
 import {useShoppingCart} from "../context/ShoppingCartContext";
 import ShopFilter from "../components/ShopFilter";
+import {Col, Container, Row} from "react-bootstrap";
 
 export function Store() {
     const {currentCategory, priceRange, hasPromoActive, nameFilter} = useShoppingCart();
@@ -23,19 +24,21 @@ export function Store() {
     }
     return (
         <>
-            <div className="d-flex w-100 p-5">
-                <ShopFilter></ShopFilter>
-                <div className="d-flex flex-wrap align-content-center gap-3 w-100 pb-5">
-                    {storeItems
-                        .filter(item => {
-                            if (checkFilter(item as StoreItemProps)) return item;
-                        })
-                        .map(item => {
-                            const fixItem = item as StoreItemProps;
-                            return <StoreItem key={item.id} {...fixItem}></StoreItem>;
-                        })}
-                </div>
-            </div>
+            <Container id="store" className="d-flex w-100 p-5">
+                <Row>
+                    <ShopFilter></ShopFilter>
+                    <Col className="d-flex flex-wrap align-content-center gap-3 w-100 pb-5">
+                        {storeItems
+                            .filter(item => {
+                                if (checkFilter(item as StoreItemProps)) return item;
+                            })
+                            .map(item => {
+                                const fixItem = item as StoreItemProps;
+                                return <StoreItem key={item.id} {...fixItem}></StoreItem>;
+                            })}
+                    </Col>
+                </Row>
+            </Container>
         </>
     );
 }

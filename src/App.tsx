@@ -22,11 +22,11 @@ function App() {
             </Routes>
             <footer
                 id="sticky-footer"
-                className="flex-shrink-0 bg-dark py-4 text-white-50 position-fixed w-100 bottom-0"
+                className="bg-dark py-4 mt-5 text-white-50 w-100"
                 style={{height: "30px"}}
             >
                 <div className="container text-center">
-                    <small>Copyright &copy; Your Website</small>
+                    <small>Copyright &copy; 2023 Furniture Shop </small>
                 </div>
             </footer>
         </ShoppingCartProvider>

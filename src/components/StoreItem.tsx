@@ -20,7 +20,7 @@ export function StoreItem({id, name, price, imageUrl, promoPrice}: StoreItemProp
     const quantity = getItemQuantity(id);
     return (
         <Card
-            className="text-white align-content-center shadow"
+            className="text-black align-content-center shadow"
             style={{
                 flex: "1, 1, 0px",
                 minWidth: "300px",

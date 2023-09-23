@@ -20,9 +20,13 @@ function Heading() {
     };
     return (
         <>
-            <Container className="d-flex align-items-center justify-content-center">
-                <img src={logo}></img>
-                <Form onSubmit={e => handleSubmit(e)} style={{minWidth: 400}}>
+            <Container className="d-flex align-items-center justify-content-center flex-wrap">
+                <img
+                    src={logo}
+                    alt="logo"
+                    style={{objectFit: "scale-down", maxWidth: "100%"}}
+                ></img>
+                <Form onSubmit={e => handleSubmit(e)} style={{maxWidth: "100%"}}>
                     <InputGroup>
                         <Form.Control
                             aria-label="min-prices"
@@ -33,7 +37,7 @@ function Heading() {
                     </InputGroup>
                 </Form>
             </Container>
-            <Container className="d-flex w-100 justify-content-center border-bottom">
+            <Container className="d-flex w-100 justify-content-center border-bottom flex-wrap">
                 {categories.map(category => {
                     return (
                         <Link

@@ -75,6 +75,7 @@
         "id": 6,
         "name": "Office Desk",
         "price": 150,
+        "promoPrice": 149,
         "imageUrl": "https://yrke.pl/userdata/public/gfx/79689/Biurko-z-metalowymi-nogami---Dab-zloty-1.jpg",
         "category": "tables",
         "details": {
