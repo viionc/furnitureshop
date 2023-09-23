@@ -48,7 +48,7 @@ export function Home() {
                             width={300}
                             className="border card-img"
                             style={{cursor: "pointer", overflow: "hidden"}}
-                            onClick={() => navigate(`/furnitureshop/store/${item.id}`)}
+                            onClick={() => navigate(`/furnitureshop/store/product/${item.id}`)}
                         />
                     );
                 })}

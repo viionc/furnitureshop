@@ -18,7 +18,7 @@ function App() {
                 <Route path="/furnitureshop/" element={<Home />} />
                 <Route path="/furnitureshop/store" element={<Store />} />
                 <Route path="/furnitureshop/about" element={<About />} />
-                <Route path="/furnitureshop/store/:id" element={<Product />} />
+                <Route path="/furnitureshop/store/product/:id" element={<Product />} />
             </Routes>
             <footer
                 id="sticky-footer"

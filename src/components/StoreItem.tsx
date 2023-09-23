@@ -34,7 +34,7 @@ export function StoreItem({id, name, price, imageUrl, promoPrice}: StoreItemProp
                 height="200px"
                 style={{objectFit: "contain", cursor: "pointer", overflow: "hidden"}}
                 className="card-img"
-                onClick={() => navigate(`/furnitureshop/store/${id}`)}
+                onClick={() => navigate(`/furnitureshop/store/product/${id}`)}
             ></Card.Img>
             <Card.Body className="d-flex flex-column" style={{zIndex: 2}}>
                 <Card.Title className="d-flex justify-content-between align-items-baseline mb-4">
