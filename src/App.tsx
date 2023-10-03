@@ -1,4 +1,4 @@
-import {Routes, Route, Navigate} from "react-router-dom";
+import {Routes, Route} from "react-router-dom";
 import {Home} from "./pages/Home";
 import {Store} from "./pages/Store";
 import {About} from "./pages/About";
@@ -14,11 +14,10 @@ function App() {
             <Navbar />
             <Heading></Heading>
             <Routes>
-                <Route index element={<Navigate to="/furnitureshop/" replace />} />
-                <Route path="/furnitureshop/" element={<Home />} />
-                <Route path="/furnitureshop/store" element={<Store />} />
-                <Route path="/furnitureshop/about" element={<About />} />
-                <Route path="/furnitureshop/store/product/:id" element={<Product />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/store" element={<Store />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/store/product/:id" element={<Product />} />
             </Routes>
             <footer className="bg-zinc-700 text-2xl text-white w-full h-[40px] flex justify-center items-center z-20 mt-auto">
                 <small>Copyright &copy; 2023 Furniture Shop </small>

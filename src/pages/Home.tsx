@@ -44,7 +44,7 @@ export function Home() {
                             src={`/products/${item.imageUrl}`}
                             alt={item.name}
                             className="border cursor-pointer overflow-hidden h-[150px] w-[200px] object-cover hover:scale-110 transition-all ease-in-out"
-                            onClick={() => navigate(`/furnitureshop/store/product/${item.id}`)}
+                            onClick={() => navigate(`/store/product/${item.id}`)}
                         />
                     );
                 })}

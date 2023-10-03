@@ -11,7 +11,7 @@ function Heading() {
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
-        navigate("/furnitureshop/store");
+        navigate("/store");
     };
 
     const handleLink = (category: Categories) => {
@@ -46,7 +46,7 @@ function Heading() {
                                 .map(item => (
                                     <div
                                         onClick={() => {
-                                            navigate(`/furnitureshop/store/product/${item.id}`);
+                                            navigate(`/store/product/${item.id}`);
                                         }}
                                         key={item.id}
                                         className="flex p-1 items-center cursor-pointer z-50"
@@ -63,7 +63,7 @@ function Heading() {
                     return (
                         <Link
                             key={category}
-                            to="/furnitureshop/store"
+                            to="/store"
                             className={`top-categories text-black decoration-none cursor-pointer hover:bg-opacity-60 hover:bg-[antiquewhite] ${
                                 currentCategory === category ? "active" : ""
                             }`}

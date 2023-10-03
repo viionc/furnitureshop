@@ -9,7 +9,7 @@ export function Navbar() {
                 <ul className="flex text-2xl h-full items-center ps-2 md:ps-[10rem]">
                     <li className="h-full">
                         <Link
-                            to="/furnitureshop/"
+                            to="/"
                             className="w-[5rem] md:w-[7rem] lg:w-[10rem] h-full flex justify-center items-center hover:bg-gray-100 hover:bg-opacity-25"
                         >
                             Home
@@ -17,7 +17,7 @@ export function Navbar() {
                     </li>
                     <li className="h-full">
                         <Link
-                            to="/furnitureshop/store"
+                            to="/store"
                             className="w-[5rem] md:w-[7rem] lg:w-[10rem] h-full flex justify-center items-center hover:bg-gray-100 hover:bg-opacity-25"
                         >
                             Store
@@ -25,7 +25,7 @@ export function Navbar() {
                     </li>
                     <li className="h-full">
                         <Link
-                            to="/furnitureshop/about"
+                            to="/about"
                             className="w-[5rem] md:w-[7rem] lg:w-[10rem] h-full flex justify-center items-center hover:bg-gray-100 hover:bg-opacity-25"
                         >
                             About

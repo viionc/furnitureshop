@@ -27,7 +27,7 @@ export function StoreItem({id, name, price, imageUrl, promoPrice}: StoreItemProp
             <img
                 src={`/products/${imageUrl}`}
                 className="h-[200px] w-[300px] object-contain cursor-pointer overflow-hidden hover:scale-125 transition-all"
-                onClick={() => navigate(`/furnitureshop/store/product/${id}`)}
+                onClick={() => navigate(`/store/product/${id}`)}
             ></img>
             <div className="flex flex-col w-full z-10 px-4 justify-between h-[150px] pb-4 bg-gray-200">
                 <div className="w-full flex justify-between items-baseline pt-2">
