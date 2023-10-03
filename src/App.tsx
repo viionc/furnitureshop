@@ -20,14 +20,8 @@ function App() {
                 <Route path="/furnitureshop/about" element={<About />} />
                 <Route path="/furnitureshop/store/product/:id" element={<Product />} />
             </Routes>
-            <footer
-                id="sticky-footer"
-                className="bg-dark py-4 mt-5 text-white-50 w-100"
-                style={{height: "30px"}}
-            >
-                <div className="container text-center">
-                    <small>Copyright &copy; 2023 Furniture Shop </small>
-                </div>
+            <footer className="bg-zinc-700 text-2xl text-white w-full h-[40px] flex justify-center items-center z-20 mt-auto">
+                <small>Copyright &copy; 2023 Furniture Shop </small>
             </footer>
         </ShoppingCartProvider>
     );

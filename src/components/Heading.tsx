@@ -1,14 +1,14 @@
-import {Container, Form, InputGroup} from "react-bootstrap";
 import {Categories, useShoppingCart} from "../context/ShoppingCartContext";
-import storeIems from "../data/items.json";
+import storeItems from "../data/items.json";
 import {Link, useNavigate} from "react-router-dom";
-import {FormEvent} from "react";
+import {FormEvent, useState} from "react";
 import logo from "../assets/logo.png";
 
 function Heading() {
     const {nameFilter, changeNameFilter, changeCategory, currentCategory} = useShoppingCart();
-    const categories = ["all", ...new Set(storeIems.map(item => item.category))];
+    const categories = ["all", ...new Set(storeItems.map(item => item.category))];
     const navigate = useNavigate();
+    const [show, setShow] = useState(false);
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
@@ -18,42 +18,64 @@ function Heading() {
     const handleLink = (category: Categories) => {
         changeCategory(category);
     };
+
     return (
-        <>
-            <Container className="d-flex align-items-center justify-content-center flex-wrap">
-                <img
-                    src={logo}
-                    alt="logo"
-                    style={{objectFit: "scale-down", maxWidth: "100%"}}
-                ></img>
-                <Form onSubmit={e => handleSubmit(e)} style={{maxWidth: "100%"}}>
-                    <InputGroup>
-                        <Form.Control
-                            aria-label="min-prices"
-                            value={nameFilter}
-                            onChange={e => changeNameFilter(e.target.value)}
-                            placeholder="Search items"
-                        />
-                    </InputGroup>
-                </Form>
-            </Container>
-            <Container className="d-flex w-100 justify-content-center border-bottom flex-wrap">
+        <section className="w-3/4 flex flex-col justify-center items-center py-3">
+            <div className="flex w-full items-center justify-center flex-wrap h-[12rem] ">
+                <img src={logo} alt="logo" className="object-scale-down"></img>
+                <form onSubmit={e => handleSubmit(e)} className="relative">
+                    <input
+                        aria-label="name"
+                        value={nameFilter}
+                        className="h-[2.2rem] rounded-lg"
+                        onFocus={() => setShow(true)}
+                        onBlur={() => {
+                            setTimeout(() => {
+                                setShow(false);
+                            }, 100);
+                        }}
+                        onChange={e => {
+                            changeNameFilter(e.target.value);
+                        }}
+                        placeholder="Search items"
+                    />
+                    <div className="absolute top-10 left-0 bg-white rounded-lg ">
+                        {show &&
+                            nameFilter.length > 1 &&
+                            storeItems
+                                .filter(item => item.name.toLowerCase().includes(nameFilter.toLowerCase()))
+                                .map(item => (
+                                    <div
+                                        onClick={() => {
+                                            navigate(`/furnitureshop/store/product/${item.id}`);
+                                        }}
+                                        key={item.id}
+                                        className="flex p-1 items-center cursor-pointer z-50"
+                                    >
+                                        <img src={`/products/${item.imageUrl}`} className="h-[50px] w-[60px]"></img>
+                                        {item.name}
+                                    </div>
+                                ))}
+                    </div>
+                </form>
+            </div>
+            <div className="flex w-1/2 justify-center border-b flex-wrap">
                 {categories.map(category => {
                     return (
                         <Link
                             key={category}
                             to="/furnitureshop/store"
-                            className={`top-categories text-black text-decoration-none ${
+                            className={`top-categories text-black decoration-none cursor-pointer hover:bg-opacity-60 hover:bg-[antiquewhite] ${
                                 currentCategory === category ? "active" : ""
                             }`}
                             onClick={() => handleLink(category as Categories)}
                         >
-                            <span className=" text-capitalize fs-4 px-5">{category}</span>
+                            <span className="capitalize text-xl px-5">{category}</span>
                         </Link>
                     );
                 })}
-            </Container>
-        </>
+            </div>
+        </section>
     );
 }
 

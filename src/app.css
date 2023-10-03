@@ -1,30 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
     --maincolor: rgb(255, 204, 183);
 }
 
-nav {
-    background-color: var(--maincolor);
-}
-
-nav a:hover {
-    opacity: 0.7;
-    background: rgb(245, 213, 201);
-}
-.top-categories:hover {
-    background-color: antiquewhite;
-    opacity: 0.6;
-    cursor: pointer;
-}
-
-.card-img {
-    transition: 0.5s all ease-in-out;
-}
-.card-img:hover {
-    transform: scale(1.5);
-}
-.filter-category:hover {
-    background: white;
-}
 .active {
     background-color: var(--maincolor);
 }

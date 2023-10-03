@@ -2,7 +2,6 @@ import storeItems from "../data/items.json";
 import {StoreItem, StoreItemProps} from "../components/StoreItem";
 import {useShoppingCart} from "../context/ShoppingCartContext";
 import ShopFilter from "../components/ShopFilter";
-import {Col, Container, Row} from "react-bootstrap";
 
 export function Store() {
     const {currentCategory, priceRange, hasPromoActive, nameFilter} = useShoppingCart();
@@ -23,22 +22,18 @@ export function Store() {
         return true;
     }
     return (
-        <>
-            <Container id="store" className="d-flex w-100 p-5">
-                <Row className="w-100">
-                    <ShopFilter></ShopFilter>
-                    <Col className="d-flex flex-wrap align-content-center gap-3 w-100 pb-5">
-                        {storeItems
-                            .filter(item => {
-                                if (checkFilter(item as StoreItemProps)) return item;
-                            })
-                            .map(item => {
-                                const fixItem = item as StoreItemProps;
-                                return <StoreItem key={item.id} {...fixItem}></StoreItem>;
-                            })}
-                    </Col>
-                </Row>
-            </Container>
-        </>
+        <section id="store" className="flex justify-center flex-wrap md:flex-nowrap w-3/4 p-5">
+            <ShopFilter></ShopFilter>
+            <div className="flex flex-wrap items-center gap-3 w-full pb-5 justify-center">
+                {storeItems
+                    .filter(item => {
+                        if (checkFilter(item as StoreItemProps)) return item;
+                    })
+                    .map(item => {
+                        const fixItem = item as StoreItemProps;
+                        return <StoreItem key={item.id} {...fixItem}></StoreItem>;
+                    })}
+            </div>
+        </section>
     );
 }

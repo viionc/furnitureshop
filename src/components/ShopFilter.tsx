@@ -1,18 +1,9 @@
-import {Col, InputGroup} from "react-bootstrap";
 import {Categories, useShoppingCart} from "../context/ShoppingCartContext";
 import storeIems from "../data/items.json";
-import Form from "react-bootstrap/form";
 
 export default function ShopFilter() {
-    const {
-        changeCategory,
-        changePriceRange,
-        priceRange,
-        changeHasPromoActive,
-        nameFilter,
-        changeNameFilter,
-        currentCategory,
-    } = useShoppingCart();
+    const {changeCategory, changePriceRange, priceRange, changeHasPromoActive, nameFilter, changeNameFilter, currentCategory, hasPromoActive} =
+        useShoppingCart();
     const categories = ["all", ...new Set(storeIems.map(item => item.category))];
 
     const handleMinPriceChange = (price: number) => {
@@ -26,58 +17,55 @@ export default function ShopFilter() {
     };
 
     return (
-        <Col md={2}>
-            <p className="text-black fs-5 p-0 m-0 py-2">Name:</p>
-            <InputGroup className="border-bottom pb-3">
-                <Form.Control
-                    aria-label="min-prices"
-                    style={{maxWidth: 200}}
-                    value={nameFilter}
-                    onChange={e => changeNameFilter(e.target.value)}
-                />
-            </InputGroup>
-            <p className="text-black fs-5 p-0 m-0 py-2">Categories:</p>
-            <div className="d-flex flex-column justify-content-center gap-3 border-bottom pb-3">
-                {categories.map(category => {
-                    return (
-                        <div
-                            className={`filter-category ${
-                                currentCategory === category ? "active" : ""
-                            }`}
-                            key={category}
-                            onClick={() => changeCategory(category as Categories)}
-                            style={{cursor: "pointer"}}
-                        >
-                            {category.toUpperCase()}
-                        </div>
-                    );
-                })}
+        <div className="flex flex-col gap-5 pe-8">
+            <div className="border-b pb-3">
+                <p className="text-black text-lg ">Name:</p>
+                <input aria-label="name" className="w-[200px] border" value={nameFilter} onChange={e => changeNameFilter(e.target.value)} />
             </div>
-            <p className="text-black fs-5 p-0 m-0 py-2">Price Range:</p>
-            <InputGroup className="border-bottom pb-3">
-                <Form.Control
-                    aria-label="min-prices"
-                    style={{maxWidth: 100}}
-                    value={priceRange[0]}
-                    onChange={e => handleMinPriceChange(parseInt(e.target.value))}
-                />
-                <Form.Control
-                    aria-label="max-price"
-                    style={{maxWidth: 100}}
-                    value={priceRange[1]}
-                    onChange={e => handleMaxPriceChange(parseInt(e.target.value))}
-                />
-            </InputGroup>
+            <div className="border-b pb-3">
+                <p className="text-black text-lg mb-2">Categories:</p>
+                <div className="flex flex-col items-start">
+                    {categories.map(category => {
+                        return (
+                            <div
+                                className={`w-full py-1 hover:bg-white ${currentCategory === category ? "active" : ""}`}
+                                key={category}
+                                onClick={() => changeCategory(category as Categories)}
+                                style={{cursor: "pointer"}}
+                            >
+                                {category.toUpperCase()}
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
 
-            <InputGroup className="d-flex align-items-center gap-2">
-                <p className="text-black fs-5 p-0 m-0 py-2">Discounted?:</p>
-                <Form.Check
-                    type="switch"
-                    id="custom-switch"
-                    style={{transform: "scale(1)"}}
-                    onChange={changeHasPromoActive}
-                />
-            </InputGroup>
-        </Col>
+            <div className="border-b pb-3">
+                <p className="text-black text-lg mb-2">Price Range:</p>
+                <div className="flex gap-2">
+                    <input
+                        aria-label="min-prices"
+                        className="w-[80px]"
+                        type="number"
+                        inputMode="numeric"
+                        value={priceRange[0]}
+                        onChange={e => handleMinPriceChange(parseInt(e.target.value))}
+                    />
+                    {"-"}
+                    <input
+                        aria-label="max-price"
+                        className="w-[80px]"
+                        inputMode="numeric"
+                        type="number"
+                        value={priceRange[1]}
+                        onChange={e => handleMaxPriceChange(parseInt(e.target.value))}
+                    />
+                </div>
+            </div>
+            <div className="flex items-center gap-2">
+                <p className="text-black text-lg">Discounted?:</p>
+                <input type="checkbox" checked={hasPromoActive} id="custom-switch" style={{transform: "scale(1)"}} onChange={changeHasPromoActive} />
+            </div>
+        </div>
     );
 }

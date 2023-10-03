@@ -42,7 +42,7 @@ export function ShoppingCartProvider({children}: ShoppingCartProviderProps) {
     const [cartItems, setCartItems] = useLocalStorage<CartItem[]>("shopping-cart", []);
     const [isOpen, setIsOpen] = useState(false);
     const [currentCategory, setCurrentCategory] = useState<Categories>("all");
-    const [priceRange, setPriceRange] = useState([0, 10000000]);
+    const [priceRange, setPriceRange] = useState([0, 100000]);
     const [hasPromoActive, setHasPromoActive] = useState(false);
     const [nameFilter, setNameFilter] = useState("");
 
