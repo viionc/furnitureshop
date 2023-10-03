@@ -1,8 +1,8 @@
-import insideshop from "../assets/insideshop.jpg";
+import {motion} from "framer-motion";
 
 export function About() {
     return (
-        <section className="text-black flex flex-col items-center w-3/4">
+        <motion.section initial={{x: -100}} animate={{x: 0}} className="text-black flex flex-col items-center w-3/4">
             <h1 className="py-4 text-4xl">About</h1>
             <div className="text-xl w-3/4">
                 <p>
@@ -22,7 +22,7 @@ export function About() {
 
                 <p>Lorem, ipsum dolor.</p>
             </div>
-            <img src={insideshop} alt="inside-shop" className="pt-5"></img>
-        </section>
+            <img src="/insideshop.png" alt="inside-shop" className="p-5"></img>
+        </motion.section>
     );
 }

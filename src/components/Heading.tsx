@@ -2,7 +2,6 @@ import {Categories, useShoppingCart} from "../context/ShoppingCartContext";
 import storeItems from "../data/items.json";
 import {Link, useNavigate} from "react-router-dom";
 import {FormEvent, useState} from "react";
-import logo from "../assets/logo.png";
 
 function Heading() {
     const {nameFilter, changeNameFilter, changeCategory, currentCategory} = useShoppingCart();
@@ -22,7 +21,7 @@ function Heading() {
     return (
         <section className="w-3/4 flex flex-col justify-center items-center py-3">
             <div className="flex w-full items-center justify-center flex-wrap h-[12rem] ">
-                <img src={logo} alt="logo" className="object-scale-down"></img>
+                <img src="/logo.png" alt="logo" className="object-scale-down"></img>
                 <form onSubmit={e => handleSubmit(e)} className="relative">
                     <input
                         aria-label="name"
