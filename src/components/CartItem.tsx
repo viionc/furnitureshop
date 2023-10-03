@@ -12,6 +12,7 @@ export function CartItem({id, quantity}: CartItemProps) {
     const item = storeItems.find(i => i.id === id);
     if (item == null) return null;
     const itemPrice = item.promoPrice ? item.promoPrice : item.price;
+
     return (
         <div className="flex items-center">
             <img src={`/products/${item.imageUrl}`} className="w-[100px] h-[50px] object-contain" />

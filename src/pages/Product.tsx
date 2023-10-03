@@ -9,7 +9,6 @@ function Product() {
     const item = storeItems.filter(item => item.id === parseInt(params.id as string))[0];
     if (!item) return <h1 className="text-center py-5">Couldn't find an item with that ID.</h1>;
     const quantity = getItemQuantity(item.id);
-
     return (
         <section className="text-black py-5 flex w-3/4">
             <div className="w-1/2 h-full flex justify-center ">
