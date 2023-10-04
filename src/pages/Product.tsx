@@ -10,11 +10,11 @@ function Product() {
     if (!item) return <h1 className="text-center py-5">Couldn't find an item with that ID.</h1>;
     const quantity = getItemQuantity(item.id);
     return (
-        <section className="text-black py-5 flex w-3/4">
-            <div className="w-1/2 h-full flex justify-center ">
+        <section className="text-black py-5 flex w-full sm:w-3/4 flex-col md:flex-row">
+            <div className="w-full md:w1/2 h-full flex justify-center ">
                 <img src={`/products/${item.imageUrl}`} alt={`image_${item.name}`} className="object-cover shadow-2xl"></img>
             </div>
-            <div className="flex flex-col w-1/2 ps-5 gap-3">
+            <div className="flex flex-col w-full md:w1/2 ps-5 gap-3 pe-2">
                 <div>
                     <p className="text-2xl border-b">{item.name}</p>
                     <p className="text-gray-500 pb-3 border-b text-lg">

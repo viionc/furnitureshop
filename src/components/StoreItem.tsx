@@ -18,7 +18,7 @@ export function StoreItem({id, name, price, imageUrl, promoPrice}: StoreItemProp
     const quantity = getItemQuantity(id);
     return (
         <div
-            className="text-black flex flex-col content-center shadow-lg overflow-hidden w-[300px] h-[350px] bg-gray-200 rounded-lg"
+            className="text-black flex flex-col content-center shadow-lg overflow-hidden w-[300px] h-[350px] bg-gray-100 rounded-lg"
             style={{
                 flex: "1, 1, 0px",
                 overflow: "hidden",
@@ -29,15 +29,15 @@ export function StoreItem({id, name, price, imageUrl, promoPrice}: StoreItemProp
                 className="h-[200px] w-[300px] object-contain cursor-pointer overflow-hidden hover:scale-125 transition-all"
                 onClick={() => navigate(`/store/product/${id}`)}
             ></img>
-            <div className="flex flex-col w-full z-10 px-4 justify-between h-[150px] pb-4 bg-gray-200">
-                <div className="w-full flex justify-between items-baseline pt-2">
-                    <span className="text-lg text-black">{name}</span>
+            <div className="flex flex-col w-full z-10 px-4 justify-between h-[150px] pb-4 bg-gray-100">
+                <div className="w-full flex justify-between items-baseline pt-2 text-xl">
+                    <span className="text-black">{name}</span>
                     {!promoPrice ? (
                         <span className="text-black">{formatCurrency(price)}</span>
                     ) : (
                         <div className="flex flex-col">
                             <span className="text-black line-through">{formatCurrency(price)}</span>
-                            <span className="text-lime-600">{formatCurrency(promoPrice)}</span>
+                            <span className="text-lime-600 font-medium">{formatCurrency(promoPrice)}</span>
                         </div>
                     )}
                 </div>

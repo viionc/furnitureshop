@@ -4,7 +4,7 @@ import {useShoppingCart} from "../context/ShoppingCartContext";
 export function Navbar() {
     const {openCart, cartQuantity} = useShoppingCart();
     return (
-        <header className="w-full h-[4rem] bg-[#FFCCB7] flex items-center justify-center">
+        <header className="w-full h-[4rem] bg-[#FFCCB7] flex items-center justify-center fixed top-0 z-50">
             <nav className="w-full md:w-3/4 h-full flex relative items-center">
                 <ul className="flex text-2xl h-full items-center ps-2 md:ps-[10rem]">
                     <li className="h-full">

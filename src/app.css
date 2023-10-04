@@ -9,3 +9,65 @@
 .active {
     background-color: var(--maincolor);
 }
+
+/* #easier {
+    animation: ani1 10s infinite;
+    visibility: hidden;
+    top: 10px;
+    transition: none;
+}
+#cheaper {
+    animation: ani2 10s infinite;
+    visibility: hidden;
+    top: 10px;
+    transition: none;
+}
+#better {
+    animation: ani3 10s infinite;
+    visibility: hidden;
+    top: 10px;
+    transition: none;
+}
+
+@keyframes ani1 {
+    0% {
+        top: 10px;
+        visibility: visible;
+    }
+    15% {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    22% {
+        top: 100px;
+        visibility: hidden;
+    }
+}
+@keyframes ani2 {
+    27% {
+        top: 10px;
+        visibility: visible;
+    }
+    32% {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    55% {
+        top: 100px;
+        visibility: hidden;
+    }
+}
+@keyframes ani3 {
+    60% {
+        top: 10px;
+        visibility: visible;
+    }
+    65% {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    100% {
+        top: 100px;
+        visibility: hidden;
+    }
+} */

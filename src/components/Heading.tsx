@@ -19,7 +19,7 @@ function Heading() {
     };
 
     return (
-        <section className="w-3/4 flex flex-col justify-center items-center py-3">
+        <section className="w-full sm:w-3/4 flex flex-col justify-center items-center py-10">
             <div className="flex w-full items-center justify-center flex-wrap h-[12rem] ">
                 <img src="/logo.png" alt="logo" className="object-scale-down"></img>
                 <form onSubmit={e => handleSubmit(e)} className="relative">
@@ -49,7 +49,7 @@ function Heading() {
                                             navigate(`/store/product/${item.id}`);
                                         }}
                                         key={item.id}
-                                        className="flex p-1 items-center cursor-pointer z-50"
+                                        className="flex p-1 items-center cursor-pointer z-50 gap-2"
                                     >
                                         <img src={`/products/${item.imageUrl}`} className="h-[50px] w-[60px]"></img>
                                         {item.name}

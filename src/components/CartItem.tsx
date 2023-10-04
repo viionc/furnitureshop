@@ -24,7 +24,7 @@ export function CartItem({id, quantity}: CartItemProps) {
                     <div className="text-gray-500 text-sm">{formatCurrency(itemPrice)}</div>
                 ) : (
                     <div className="flex gap-2">
-                        <div className="text-gray-500 text-sm line-through">{formatCurrency(itemPrice)}</div>
+                        <div className="text-gray-500 text-sm line-through">{formatCurrency(item.price)}</div>
                         <div className="text-lime-600 text-sm">{formatCurrency(item.promoPrice)}</div>
                     </div>
                 )}

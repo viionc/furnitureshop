@@ -22,7 +22,7 @@ export function Store() {
         return true;
     }
     return (
-        <section id="store" className="flex justify-center flex-wrap md:flex-nowrap w-3/4 p-5">
+        <section id="store" className="flex justify-center flex-wrap md:flex-nowrap w-full sm:w-3/4 p-5">
             <ShopFilter></ShopFilter>
             <div className="flex flex-wrap items-center gap-3 w-full pb-5 justify-center">
                 {storeItems

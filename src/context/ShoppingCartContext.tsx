@@ -48,7 +48,7 @@ export function ShoppingCartProvider({children}: ShoppingCartProviderProps) {
 
     const cartQuantity = cartItems.reduce((quantity, item) => item.quantity + quantity, 0);
 
-    const openCart = () => setIsOpen(true);
+    const openCart = () => setIsOpen(!isOpen);
     const closeCart = () => setIsOpen(false);
 
     const changeCategory = (category: Categories) => setCurrentCategory(category);

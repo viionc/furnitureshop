@@ -15,7 +15,7 @@ export function ShoppingCart({isOpen}: ShoppingCartProps) {
                 onClick={closeCart}
                 style={{display: isOpen ? "flex" : "none"}}
             ></div>
-            <div className={`fixed bg-white top-0 right-0 h-full z-30 transition-all ${isOpen ? "w-full sm:w-[26rem]" : "w-[0rem]"}`} style={{}}>
+            <div className={`fixed bg-white top-[4rem] right-0 h-full z-30 transition-all ${isOpen ? "w-full sm:w-[26rem]" : "w-[0rem]"}`} style={{}}>
                 <div className="p-10 relative w-full">
                     <button
                         onClick={closeCart}
@@ -35,9 +35,11 @@ export function ShoppingCart({isOpen}: ShoppingCartProps) {
                         </svg>
                     </button>
                     <div className="flex flex-col">
-                        {cartItems.map(item => {
-                            return <CartItem key={item.id} {...item}></CartItem>;
-                        })}
+                        <div className="flex flex-col justify-start gap-3">
+                            {cartItems.map(item => {
+                                return <CartItem key={item.id} {...item}></CartItem>;
+                            })}
+                        </div>
                         <div className="ms-auto font-bold font-2xl text-end mt-10">
                             Total:{" "}
                             {formatCurrency(
