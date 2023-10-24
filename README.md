@@ -1,14 +1,22 @@
-Check at https://furnitureshop-ochre.vercel.app/furnitureshop/
+# Furniture Shop Demo: https://furnitureshop-ochre.vercel.app/
 
-Simple e-commerce app, that lets you add items to cart, which counts items and sums up total price.
+E-commerce app used to practice frontend development skills. 
 
-Used Vite, React Routes, React Context and Bootstrap for React.
+# Technologies used:
+- Vite,
+- React,
+- TypeScript,
+- framer-motion,
+- typed.js
+- TailwindCSS
+
+# To build the app type in terminal:
+``` js
+npm run build
+```
 
 
----
-
-Sprawdź na https://furnitureshop-ochre.vercel.app/furnitureshop/
-
-Prosta aplikacja e-commerce, która pozwala na dodawanie przedmiotów do wózka, który podlicza cały koszt.
-
-Do aplikacji użyłem Vite, React Routes, React Context i Bootstrap for React.
+# Previews:
+<img src="https://i.imgur.com/iS44UrE.png" alt="preview">
+<img src="https://i.imgur.com/j728Q45.png" alt="preview">
+<img src="https://i.imgur.com/Kp5bzRJ.png" alt="preview">
